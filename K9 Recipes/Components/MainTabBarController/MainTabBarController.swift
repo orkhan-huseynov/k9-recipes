@@ -6,16 +6,16 @@
 //  Copyright © 2019 Orkhan Huseynov. All rights reserved.
 //
 
-import UIKit
+import AsyncDisplayKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: ASTabBarController {
     
     private lazy var tabs: [UIViewController] = {
         let searchVC = SearchViewController()
         searchVC.tabBarItem = UITabBarItem(title: "Find recipe", image: #imageLiteral(resourceName: "search"), tag: 0)
         
         let ideasVC = IdeasViewController()
-        ideasVC.tabBarItem = UITabBarItem(title: "Dinner ideas", image: #imageLiteral(resourceName: "bulb"), tag: 1)
+        ideasVC.tabBarItem = UITabBarItem(title: "Latest ideas", image: #imageLiteral(resourceName: "bulb"), tag: 1)
         
         let recipesVC = RecipesViewController()
         recipesVC.tabBarItem = UITabBarItem(title: "By categories", image: #imageLiteral(resourceName: "book"), tag: 2)
@@ -30,6 +30,6 @@ class MainTabBarController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.baseGreen], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
         
-        viewControllers = tabs.map { UINavigationController(rootViewController: $0) }
+        viewControllers = tabs.map { ASNavigationController(rootViewController: $0) }
     }
 }
