@@ -47,6 +47,8 @@
 		9D2B866A232396EC00A0815A /* K9 RecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "K9 RecipesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D2B866E232396EC00A0815A /* K9_RecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K9_RecipesUITests.swift; sourceTree = "<group>"; };
 		9D2B8670232396EC00A0815A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D2B867C2323975300A0815A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9D2B867D2323A68300A0815A /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,9 @@
 				9D2B864D232396EB00A0815A /* K9 Recipes */,
 				9D2B8662232396EC00A0815A /* K9 RecipesTests */,
 				9D2B866D232396EC00A0815A /* K9 RecipesUITests */,
+				9D2B867D2323A68300A0815A /* LICENSE.md */,
 				9D2B864C232396EB00A0815A /* Products */,
+				9D2B867C2323975300A0815A /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +101,11 @@
 		9D2B864D232396EB00A0815A /* K9 Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				9D2B864E232396EB00A0815A /* AppDelegate.swift */,
-				9D2B8650232396EB00A0815A /* ViewController.swift */,
-				9D2B8652232396EB00A0815A /* Main.storyboard */,
-				9D2B8655232396EC00A0815A /* Assets.xcassets */,
-				9D2B8657232396EC00A0815A /* LaunchScreen.storyboard */,
-				9D2B865A232396EC00A0815A /* Info.plist */,
+				9D2B86822323A6EA00A0815A /* SupportingFiles */,
+				9D2B86812323A6E200A0815A /* Extensions */,
+				9D2B86802323A6D900A0815A /* Protocols */,
+				9D2B867F2323A6CE00A0815A /* ViewModels */,
+				9D2B867E2323A6C500A0815A /* ViewControllers */,
 			);
 			path = "K9 Recipes";
 			sourceTree = "<group>";
@@ -123,6 +126,47 @@
 				9D2B8670232396EC00A0815A /* Info.plist */,
 			);
 			path = "K9 RecipesUITests";
+			sourceTree = "<group>";
+		};
+		9D2B867E2323A6C500A0815A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D2B8650232396EB00A0815A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9D2B867F2323A6CE00A0815A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9D2B86802323A6D900A0815A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9D2B86812323A6E200A0815A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9D2B86822323A6EA00A0815A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9D2B864E232396EB00A0815A /* AppDelegate.swift */,
+				9D2B865A232396EC00A0815A /* Info.plist */,
+				9D2B8652232396EB00A0815A /* Main.storyboard */,
+				9D2B8655232396EC00A0815A /* Assets.xcassets */,
+				9D2B8657232396EC00A0815A /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +478,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M97DBY2H7;
-				INFOPLIST_FILE = "K9 Recipes/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/K9 Recipes/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,7 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "huseynov.us.K9-Recipes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -452,7 +497,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M97DBY2H7;
-				INFOPLIST_FILE = "K9 Recipes/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/K9 Recipes/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "huseynov.us.K9-Recipes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
