@@ -1,0 +1,6 @@
+framework module Pods_K9_RecipesUITests {
+  umbrella header "Pods-K9 RecipesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
