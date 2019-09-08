@@ -164,7 +164,7 @@ class RecipeDetailsViewController: ASViewController<ASScrollNode> {
                         width: constrainedSize.max.width,
                         height: constrainedSize.max.width*0.7
                     )
-                    stack.children?.append(this.youtubeVideoNode.insets(top: 5.0, left: 15.0, bottom: 0.0, right: 15.0))
+                    stack.children?.append(this.youtubeVideoNode.insets(top: 5.0, left: 15.0, bottom: 10.0, right: 15.0))
                 default:
                     stack.children?.append(this.categoryNode.insets(top: 5.0, left: 15.0, bottom: 0.0, right: 15.0))
                     stack.children?.append(this.areaNode.insets(top: 5.0, left: 15.0, bottom: 0.0, right: 15.0))

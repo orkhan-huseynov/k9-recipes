@@ -48,6 +48,8 @@
 		9D6F3479232568AC00CB0A67 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F3478232568AC00CB0A67 /* RecipesViewController.swift */; };
 		9D6F347B232568B900CB0A67 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F347A232568B900CB0A67 /* RecipesViewModel.swift */; };
 		9D6F347D232568D000CB0A67 /* RecipesViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F347C232568D000CB0A67 /* RecipesViewControllerProtocol.swift */; };
+		9D6F347F23256C6900CB0A67 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F347E23256C6900CB0A67 /* AboutViewController.swift */; };
+		9D6F348123256E8D00CB0A67 /* Bundle+Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F348023256E8D00CB0A67 /* Bundle+Versions.swift */; };
 		9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE32323B92F0008B272 /* MainTabBarController.swift */; };
 		9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */; };
 		9D83EDE82323C8030008B272 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE72323C8030008B272 /* CategoriesViewController.swift */; };
@@ -143,6 +145,8 @@
 		9D6F3478232568AC00CB0A67 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		9D6F347A232568B900CB0A67 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		9D6F347C232568D000CB0A67 /* RecipesViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewControllerProtocol.swift; sourceTree = "<group>"; };
+		9D6F347E23256C6900CB0A67 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		9D6F348023256E8D00CB0A67 /* Bundle+Versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Versions.swift"; sourceTree = "<group>"; };
 		9D83EDE32323B92F0008B272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		9D83EDE72323C8030008B272 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 				9D6F344A23251A8E00CB0A67 /* SearchResultsViewController.swift */,
 				9D6F345D23252F2400CB0A67 /* RecipeDetailsViewController.swift */,
 				9D6F3478232568AC00CB0A67 /* RecipesViewController.swift */,
+				9D6F347E23256C6900CB0A67 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				9D6F3459232521BE00CB0A67 /* UIView+Shake.swift */,
 				9D6F345B2325281C00CB0A67 /* ASNavigationController+BackButton.swift */,
 				9D6F34632325435A00CB0A67 /* ASDisplayNode+Separator.swift */,
+				9D6F348023256E8D00CB0A67 /* Bundle+Versions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -789,12 +795,14 @@
 				9D83EDEA2323CFFD0008B272 /* IdeasViewController.swift in Sources */,
 				9D4C459F23240327002D2D24 /* Ingredient.swift in Sources */,
 				9D6F346C232562DE00CB0A67 /* CategoriesViewModel.swift in Sources */,
+				9D6F347F23256C6900CB0A67 /* AboutViewController.swift in Sources */,
 				9D9DB800232434DA0046EF12 /* ActivityIndicatorController.swift in Sources */,
 				9D9DB7F923242FDD0046EF12 /* Array+SafeSubscript.swift in Sources */,
 				9D6E33E82324D3CA008E76D9 /* ButtonNode.swift in Sources */,
 				9D6F345C2325281C00CB0A67 /* ASNavigationController+BackButton.swift in Sources */,
 				9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */,
 				9D6F3473232564C300CB0A67 /* CategoriesTableNodeItem.swift in Sources */,
+				9D6F348123256E8D00CB0A67 /* Bundle+Versions.swift in Sources */,
 				9D83EDED2323D7940008B272 /* Router.swift in Sources */,
 				9D6F345E23252F2400CB0A67 /* RecipeDetailsViewController.swift in Sources */,
 				9D9DB7EC232429300046EF12 /* TextNode.swift in Sources */,
