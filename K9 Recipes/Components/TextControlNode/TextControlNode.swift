@@ -46,6 +46,15 @@ class TextControlNode: ASControlNode {
         }
     }
     
+    var autocompletionStrings: [String] {
+        get {
+            return textControl.autocompletionStrings
+        }
+        set(val) {
+            textControl.autocompletionStrings = val
+        }
+    }
+    
     private lazy var label: TextNode = {
         let node = TextNode()
         node.color = .baseBlack

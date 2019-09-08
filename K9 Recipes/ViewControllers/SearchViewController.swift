@@ -10,6 +10,26 @@ import AsyncDisplayKit
 
 class SearchViewController: ASViewController<ASScrollNode> {
     
+    var viewModel: SearchViewControllerProtocol = SearchViewModel()
+    
+    var isEmpty: Bool = false {
+        didSet(val) {
+            node.setNeedsLayout()
+        }
+    }
+    
+    private lazy var emptyNode: SectionEmptyNode = {
+        let node = SectionEmptyNode()
+        node.title = "Sorry!\nFailed to load ingredients."
+        return node
+    }()
+    
+    private lazy var emptyNodeRefreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
+        return control
+    }()
+    
     private lazy var bgNode: ASImageNode = {
         let node = ASImageNode()
         node.image = #imageLiteral(resourceName: "main-bg-blurred")
@@ -31,9 +51,11 @@ class SearchViewController: ASViewController<ASScrollNode> {
         
         node.title = "Main ingredient"
         node.placeholder = "eg: Chicken"
-        node.onChange = { [weak self] _ in
+        node.onChange = { [weak self] text in
+            print(text)
             self?.validateFields()
         }
+        node.autocompletionStrings = ["Apple", "Pineapple", "Pear"]
         
         return node
     }()
@@ -61,6 +83,9 @@ class SearchViewController: ASViewController<ASScrollNode> {
         
         node.title = "Find recipes!"
         node.isEnabled = false
+        node.onTap = { [weak self] in
+            print(self?.mainIngredient.value)
+        }
         
         return node
     }()
@@ -69,6 +94,11 @@ class SearchViewController: ASViewController<ASScrollNode> {
         let node = ButtonNode()
         node.title = "reset"
         node.isEnabled = true
+        node.onTap = { [weak self] in
+            self?.mainIngredient.value = .none
+            self?.secondaryIngredient.value = .none
+            self?.additionalIngredient.value = .none
+        }
         return node
     }()
 
@@ -82,6 +112,12 @@ class SearchViewController: ASViewController<ASScrollNode> {
         node.layoutSpecBlock = { [weak self] _, constrainedSize in
             let stack: ASStackLayoutSpec = .vertical()
             guard let this = self else { return stack }
+
+            this.emptyNode.style.preferredSize.width = constrainedSize.max.width
+            this.emptyNode.style.flexGrow = 1
+            let emptyStack: ASStackLayoutSpec = .vertical()
+            emptyStack.children = [this.emptyNode]
+            emptyStack.style.flexGrow = 1
             
             this.titleNode.font = .systemFont(ofSize: constrainedSize.max.width*0.08)
             
@@ -113,7 +149,14 @@ class SearchViewController: ASViewController<ASScrollNode> {
                 right: 0.0
             )
             
-            return ASBackgroundLayoutSpec(child: insetsSpec, background: this.bgNode)
+            let emptyStackInsets = emptyStack.insets(
+                top: this.navigationBarHeight + this.statusBarHeight,
+                left: 0.0,
+                bottom: this.tabBarHeight,
+                right: 0.0
+            )
+            
+            return this.isEmpty ? emptyStackInsets : ASBackgroundLayoutSpec(child: insetsSpec, background: this.bgNode)
         }
     }
     
@@ -121,16 +164,53 @@ class SearchViewController: ASViewController<ASScrollNode> {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        prepare()
+        viewModel.loadIngredients()
+        
+        emptyNode.view.showsVerticalScrollIndicator = false
+        emptyNode.view.alwaysBounceVertical = true
+        emptyNode.view.refreshControl = emptyNodeRefreshControl
      
         navigationItem.title = "Find recipes"
         (view as? UIScrollView)?.contentInsetAdjustmentBehavior = .never
     }
+    
+    func prepare() {
+        viewModel.onChange { [weak self] event in
+            switch event {
+            case .startedLoadingIngredients:
+                if !(self?.viewModel.hasContent ?? false) {
+                    ActivityIndicatorController.shared.present()
+                }
+            case let .finishedLoadingIngredients(result):
+                ActivityIndicatorController.shared.dismiss()
+                self?.emptyNodeRefreshControl.endRefreshing()
+
+                switch result {
+                case let .success(ingredients):
+                    self?.isEmpty = ingredients.isEmpty
+
+                    let autocompleteArr = ingredients.compactMap { $0.name }
+                    
+                    self?.mainIngredient.autocompletionStrings = autocompleteArr
+                    self?.secondaryIngredient.autocompletionStrings = autocompleteArr
+                    self?.additionalIngredient.autocompletionStrings = autocompleteArr
+                case .failure:
+                    AlertController.shared.message(title: "Error", message: "Sorry! Could not load ingredients list")
+                }
+            }
+        }
+    }
 
     private func validateFields() {
         submitButton.isEnabled = mainIngredient.value != nil
+    }
+    
+    @objc private func refreshHandler() {
+        viewModel.loadIngredients()
     }
     
 }

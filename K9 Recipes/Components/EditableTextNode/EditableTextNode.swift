@@ -95,6 +95,15 @@ class EditableTextNode: ASEditableTextNode {
         }
     }
     
+    var autocompletionStrings: [String] = [] {
+        didSet {
+            autocorrectionType = .no
+        }
+    }
+    
+    var autoCompleteCharacterCount = 0
+    var timer = Timer()
+    
     override init() {
         super.init()
         
@@ -121,8 +130,17 @@ class EditableTextNode: ASEditableTextNode {
         super.didLoad()
         
         textView.textContainer.lineBreakMode = .byTruncatingTail
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(resetFormatting),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 extension EditableTextNode: ASEditableTextNodeDelegate {
@@ -134,11 +152,90 @@ extension EditableTextNode: ASEditableTextNodeDelegate {
     func editableTextNode(_ editableTextNode: ASEditableTextNode, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             editableTextNode.resignFirstResponder()
+            resetFormatting()
             return false
+        }
+        
+        var subString = (editableTextNode.textView.text.capitalized as NSString).replacingCharacters(in: range, with: text)
+        subString = formatSubstring(subString: subString)
+        
+        if subString.isEmpty {
+            resetValues()
+        } else {
+            searchEntriesWith(substring: subString)
         }
         
         return true
     }
     
+    func formatSubstring(subString: String) -> String {
+        return String(subString.dropLast(autoCompleteCharacterCount)).lowercased().capitalized
+    }
+    
+    func resetValues() {
+        autoCompleteCharacterCount = 0
+        text = ""
+    }
+    
+    func searchEntriesWith(substring: String) {
+        let userQuery = substring
+        let suggestions = getAutocompleteSuggestions(userText: substring)
+        
+        if suggestions.count > 0 {
+            timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { [weak self] timer in
+                if let autocompleteResult = self?.formatResult(substring: substring, possibleMatches: suggestions) {
+                    self?.insertFormattedText(autocompleteResult: autocompleteResult, userQuery: userQuery)
+                    self?.moveCaretToEnd(userQuery: userQuery)
+                }
+            })
+        } else {
+            timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { [weak self] timer in
+                self?.text = substring
+            })
+            autoCompleteCharacterCount = 0
+        }
+    }
+    
+    func getAutocompleteSuggestions(userText: String) -> [String]{
+        return autocompletionStrings.compactMap { $0.starts(with: userText) ? $0 : nil }
+    }
+    
+    func insertFormattedText(autocompleteResult: String, userQuery : String) {
+        let finalString = userQuery + autocompleteResult
+        
+        let range = NSRange(location: userQuery.count, length: autocompleteResult.count)
+        let totalRange = NSRange(location: 0, length: finalString.count)
+        
+        let formattedString = NSMutableAttributedString(string: finalString)
+        
+        formattedString.addAttribute(.foregroundColor, value: UIColor.baseGray, range: range)
+        formattedString.addAttribute(.font, value: font ?? UIFont.systemFont(ofSize: 17), range: totalRange)
+        
+        attributedText = formattedString
+    }
+    
+    func moveCaretToEnd(userQuery: String) {
+        if let newPosition = textView.position(from: textView.beginningOfDocument, offset: userQuery.count) {
+            textView.selectedTextRange = textView.textRange(from: newPosition, to: newPosition)
+        }
+        if let start = textView.selectedTextRange?.start {
+            textView.offset(from: textView.beginningOfDocument, to: start)
+        }
+    }
+    
+    func formatResult(substring: String, possibleMatches: [String]) -> String {
+        guard var autoCompleteResult = possibleMatches.first else { return "" }
+        autoCompleteResult.removeSubrange(
+            autoCompleteResult.startIndex..<autoCompleteResult.index(autoCompleteResult.startIndex, offsetBy: substring.count)
+        )
+        autoCompleteCharacterCount = autoCompleteResult.count
+        return autoCompleteResult
+    }
+    
+    @objc func resetFormatting() {
+        color = .baseBlack
+        textView.text = text
+        autoCompleteCharacterCount = 0
+    }
 }
 

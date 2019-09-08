@@ -24,6 +24,11 @@
 		9D6E33EA2324DAE0008E76D9 /* Layout+Insets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E33E92324DAE0008E76D9 /* Layout+Insets.swift */; };
 		9D6E33ED2324DC8A008E76D9 /* PrimaryButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E33EC2324DC8A008E76D9 /* PrimaryButtonNode.swift */; };
 		9D6F34452324E1E700CB0A67 /* TextControlNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F34442324E1E700CB0A67 /* TextControlNode.swift */; };
+		9D6F34472324F85400CB0A67 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F34462324F85400CB0A67 /* SearchViewModel.swift */; };
+		9D6F34492324F87000CB0A67 /* SeachViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F34482324F87000CB0A67 /* SeachViewControllerProtocol.swift */; };
+		9D6F344B23251A8E00CB0A67 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F344A23251A8E00CB0A67 /* SearchResultsViewController.swift */; };
+		9D6F344D23251A9B00CB0A67 /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F344C23251A9B00CB0A67 /* SearchResultsViewModel.swift */; };
+		9D6F344F23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F344E23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift */; };
 		9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE32323B92F0008B272 /* MainTabBarController.swift */; };
 		9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */; };
 		9D83EDE82323C8030008B272 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE72323C8030008B272 /* RecipesViewController.swift */; };
@@ -95,6 +100,11 @@
 		9D6E33E92324DAE0008E76D9 /* Layout+Insets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout+Insets.swift"; sourceTree = "<group>"; };
 		9D6E33EC2324DC8A008E76D9 /* PrimaryButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonNode.swift; sourceTree = "<group>"; };
 		9D6F34442324E1E700CB0A67 /* TextControlNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextControlNode.swift; sourceTree = "<group>"; };
+		9D6F34462324F85400CB0A67 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		9D6F34482324F87000CB0A67 /* SeachViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachViewControllerProtocol.swift; sourceTree = "<group>"; };
+		9D6F344A23251A8E00CB0A67 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		9D6F344C23251A9B00CB0A67 /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
+		9D6F344E23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewControllerProtocol.swift; sourceTree = "<group>"; };
 		9D83EDE32323B92F0008B272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		9D83EDE72323C8030008B272 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +247,7 @@
 				9D2B8650232396EB00A0815A /* SearchViewController.swift */,
 				9D83EDE72323C8030008B272 /* RecipesViewController.swift */,
 				9D83EDE92323CFFD0008B272 /* IdeasViewController.swift */,
+				9D6F344A23251A8E00CB0A67 /* SearchResultsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -245,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				9D9DB7E3232421820046EF12 /* IdeasViewModel.swift */,
+				9D6F34462324F85400CB0A67 /* SearchViewModel.swift */,
+				9D6F344C23251A9B00CB0A67 /* SearchResultsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -253,6 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				9D9DB7E5232422330046EF12 /* IdeasViewControllerProtocol.swift */,
+				9D6F34482324F87000CB0A67 /* SeachViewControllerProtocol.swift */,
+				9D6F344E23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -644,6 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6F34472324F85400CB0A67 /* SearchViewModel.swift in Sources */,
 				9D2B8651232396EB00A0815A /* SearchViewController.swift in Sources */,
 				9D9DB7E4232421820046EF12 /* IdeasViewModel.swift in Sources */,
 				9D83EDEA2323CFFD0008B272 /* IdeasViewController.swift in Sources */,
@@ -654,14 +670,18 @@
 				9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */,
 				9D83EDED2323D7940008B272 /* Router.swift in Sources */,
 				9D9DB7EC232429300046EF12 /* TextNode.swift in Sources */,
+				9D6F344D23251A9B00CB0A67 /* SearchResultsViewModel.swift in Sources */,
 				9D2B864F232396EB00A0815A /* AppDelegate.swift in Sources */,
 				9D4C45942323FA07002D2D24 /* Logger.swift in Sources */,
 				9D83EDE82323C8030008B272 /* RecipesViewController.swift in Sources */,
+				9D6F344F23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift in Sources */,
 				9D4C459D2324029B002D2D24 /* RecipeStep.swift in Sources */,
 				9D9DB7E6232422330046EF12 /* IdeasViewControllerProtocol.swift in Sources */,
 				9D9DB7FD232433C40046EF12 /* UIViewController+Helpers.swift in Sources */,
 				9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */,
 				9D83EDF42323DF590008B272 /* ServiceLayer.swift in Sources */,
+				9D6F344B23251A8E00CB0A67 /* SearchResultsViewController.swift in Sources */,
+				9D6F34492324F87000CB0A67 /* SeachViewControllerProtocol.swift in Sources */,
 				9D9DB7FB232430CE0046EF12 /* IdeasTableNodeCell.swift in Sources */,
 				9D6E33ED2324DC8A008E76D9 /* PrimaryButtonNode.swift in Sources */,
 				9D83EDF22323DB5A0008B272 /* Constants.swift in Sources */,
