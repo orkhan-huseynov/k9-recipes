@@ -127,7 +127,8 @@ class SearchResultsViewController: ASViewController<ASDisplayNode> {
                 instructions: row.instructions,
                 image: row.image,
                 onSelect: { [weak self] in
-                    
+                    let vc = RecipeDetailsViewController(recipe: row)
+                    self?.navigationController?.pushViewController(vc, animated: true)
                 }
             )
         }

@@ -88,6 +88,8 @@ class IdeasViewController: ASViewController<ASDisplayNode> {
         emptyNode.view.alwaysBounceVertical = true
         emptyNode.view.refreshControl = emptyNodeRefreshControl
         
+        setBackTitle()
+        
         navigationItem.title = "Latest Recipe Ideas"
     }
     
@@ -126,7 +128,8 @@ class IdeasViewController: ASViewController<ASDisplayNode> {
                 instructions: row.instructions,
                 image: row.image,
                 onSelect: { [weak self] in
-                    
+                    let vc = RecipeDetailsViewController(recipe: row)
+                    self?.navigationController?.pushViewController(vc, animated: true)
                 }
             )
         }

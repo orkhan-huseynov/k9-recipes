@@ -34,6 +34,12 @@
 		9D6F34582325202900CB0A67 /* SearchResultsTableNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F34572325202900CB0A67 /* SearchResultsTableNodeCell.swift */; };
 		9D6F345A232521BE00CB0A67 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F3459232521BE00CB0A67 /* UIView+Shake.swift */; };
 		9D6F345C2325281C00CB0A67 /* ASNavigationController+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F345B2325281C00CB0A67 /* ASNavigationController+BackButton.swift */; };
+		9D6F345E23252F2400CB0A67 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F345D23252F2400CB0A67 /* RecipeDetailsViewController.swift */; };
+		9D6F346023252F3100CB0A67 /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F345F23252F3100CB0A67 /* RecipeDetailsViewModel.swift */; };
+		9D6F346223252F4000CB0A67 /* RecipeDetailsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F346123252F4000CB0A67 /* RecipeDetailsViewControllerProtocol.swift */; };
+		9D6F34642325435A00CB0A67 /* ASDisplayNode+Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F34632325435A00CB0A67 /* ASDisplayNode+Separator.swift */; };
+		9D6F346723254F3300CB0A67 /* SegmentedControlNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F346623254F3300CB0A67 /* SegmentedControlNode.swift */; };
+		9D6F346A23255B7800CB0A67 /* YoutubeVideoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F346923255B7800CB0A67 /* YoutubeVideoNode.swift */; };
 		9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE32323B92F0008B272 /* MainTabBarController.swift */; };
 		9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */; };
 		9D83EDE82323C8030008B272 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE72323C8030008B272 /* RecipesViewController.swift */; };
@@ -115,6 +121,12 @@
 		9D6F34572325202900CB0A67 /* SearchResultsTableNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableNodeCell.swift; sourceTree = "<group>"; };
 		9D6F3459232521BE00CB0A67 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		9D6F345B2325281C00CB0A67 /* ASNavigationController+BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASNavigationController+BackButton.swift"; sourceTree = "<group>"; };
+		9D6F345D23252F2400CB0A67 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		9D6F345F23252F3100CB0A67 /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
+		9D6F346123252F4000CB0A67 /* RecipeDetailsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewControllerProtocol.swift; sourceTree = "<group>"; };
+		9D6F34632325435A00CB0A67 /* ASDisplayNode+Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASDisplayNode+Separator.swift"; sourceTree = "<group>"; };
+		9D6F346623254F3300CB0A67 /* SegmentedControlNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlNode.swift; sourceTree = "<group>"; };
+		9D6F346923255B7800CB0A67 /* YoutubeVideoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoNode.swift; sourceTree = "<group>"; };
 		9D83EDE32323B92F0008B272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		9D83EDE72323C8030008B272 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +270,7 @@
 				9D83EDE72323C8030008B272 /* RecipesViewController.swift */,
 				9D83EDE92323CFFD0008B272 /* IdeasViewController.swift */,
 				9D6F344A23251A8E00CB0A67 /* SearchResultsViewController.swift */,
+				9D6F345D23252F2400CB0A67 /* RecipeDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +281,7 @@
 				9D9DB7E3232421820046EF12 /* IdeasViewModel.swift */,
 				9D6F34462324F85400CB0A67 /* SearchViewModel.swift */,
 				9D6F344C23251A9B00CB0A67 /* SearchResultsViewModel.swift */,
+				9D6F345F23252F3100CB0A67 /* RecipeDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -278,6 +292,7 @@
 				9D9DB7E5232422330046EF12 /* IdeasViewControllerProtocol.swift */,
 				9D6F34482324F87000CB0A67 /* SeachViewControllerProtocol.swift */,
 				9D6F344E23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift */,
+				9D6F346123252F4000CB0A67 /* RecipeDetailsViewControllerProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -291,6 +306,7 @@
 				9D6E33E92324DAE0008E76D9 /* Layout+Insets.swift */,
 				9D6F3459232521BE00CB0A67 /* UIView+Shake.swift */,
 				9D6F345B2325281C00CB0A67 /* ASNavigationController+BackButton.swift */,
+				9D6F34632325435A00CB0A67 /* ASDisplayNode+Separator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -369,9 +385,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9D6F346523254F2300CB0A67 /* SegmentedControlNode */ = {
+			isa = PBXGroup;
+			children = (
+				9D6F346623254F3300CB0A67 /* SegmentedControlNode.swift */,
+			);
+			path = SegmentedControlNode;
+			sourceTree = "<group>";
+		};
+		9D6F346823255B6700CB0A67 /* YoutubeVideoNode */ = {
+			isa = PBXGroup;
+			children = (
+				9D6F346923255B7800CB0A67 /* YoutubeVideoNode.swift */,
+			);
+			path = YoutubeVideoNode;
+			sourceTree = "<group>";
+		};
 		9D83EDE12323B1500008B272 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9D6F346823255B6700CB0A67 /* YoutubeVideoNode */,
+				9D6F346523254F2300CB0A67 /* SegmentedControlNode */,
 				9D6F345023251F8900CB0A67 /* SearchResultsTableNode */,
 				9D6E33EE2324E1BD008E76D9 /* TextControlNode */,
 				9D6E33EB2324DC79008E76D9 /* PrimaryButtonNode */,
@@ -698,6 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6F346723254F3300CB0A67 /* SegmentedControlNode.swift in Sources */,
 				9D6F34472324F85400CB0A67 /* SearchViewModel.swift in Sources */,
 				9D2B8651232396EB00A0815A /* SearchViewController.swift in Sources */,
 				9D9DB7E4232421820046EF12 /* IdeasViewModel.swift in Sources */,
@@ -709,6 +744,7 @@
 				9D6F345C2325281C00CB0A67 /* ASNavigationController+BackButton.swift in Sources */,
 				9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */,
 				9D83EDED2323D7940008B272 /* Router.swift in Sources */,
+				9D6F345E23252F2400CB0A67 /* RecipeDetailsViewController.swift in Sources */,
 				9D9DB7EC232429300046EF12 /* TextNode.swift in Sources */,
 				9D6F344D23251A9B00CB0A67 /* SearchResultsViewModel.swift in Sources */,
 				9D2B864F232396EB00A0815A /* AppDelegate.swift in Sources */,
@@ -721,11 +757,13 @@
 				9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */,
 				9D83EDF42323DF590008B272 /* ServiceLayer.swift in Sources */,
 				9D6F344B23251A8E00CB0A67 /* SearchResultsViewController.swift in Sources */,
+				9D6F346223252F4000CB0A67 /* RecipeDetailsViewControllerProtocol.swift in Sources */,
 				9D6F345423251FB300CB0A67 /* SearchResultsTableNodeItem.swift in Sources */,
 				9D6F34492324F87000CB0A67 /* SeachViewControllerProtocol.swift in Sources */,
 				9D9DB7FB232430CE0046EF12 /* IdeasTableNodeCell.swift in Sources */,
 				9D6E33ED2324DC8A008E76D9 /* PrimaryButtonNode.swift in Sources */,
 				9D83EDF22323DB5A0008B272 /* Constants.swift in Sources */,
+				9D6F346023252F3100CB0A67 /* RecipeDetailsViewModel.swift in Sources */,
 				9D9DB802232435780046EF12 /* AlertController.swift in Sources */,
 				9D9DB7F323242D950046EF12 /* IdeasTableNode.swift in Sources */,
 				9D4C45972323FE13002D2D24 /* Recipe.swift in Sources */,
@@ -735,7 +773,9 @@
 				9D4C459B2324022F002D2D24 /* Area.swift in Sources */,
 				9D6F345A232521BE00CB0A67 /* UIView+Shake.swift in Sources */,
 				9D6F34582325202900CB0A67 /* SearchResultsTableNodeCell.swift in Sources */,
+				9D6F34642325435A00CB0A67 /* ASDisplayNode+Separator.swift in Sources */,
 				9D9DB7F723242DF50046EF12 /* TableNodeBase.swift in Sources */,
+				9D6F346A23255B7800CB0A67 /* YoutubeVideoNode.swift in Sources */,
 				9D6F34452324E1E700CB0A67 /* TextControlNode.swift in Sources */,
 				9D6E33EA2324DAE0008E76D9 /* Layout+Insets.swift in Sources */,
 				9D9DB7F123242CE30046EF12 /* IdeasTableNodeItem.swift in Sources */,

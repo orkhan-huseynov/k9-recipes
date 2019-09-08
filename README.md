@@ -35,6 +35,8 @@ The project contains some basic Unit and UI tests
 ## Built With
 
 * [Texture](https://texturegroup.org) - The framework used to build asynchronous UI
+* [IQKeyboardManagerSwift](https://github.com/hackiftekhar/IQKeyboardManager) - Is used to avoid keyboard overlapping with text fields
+* [YoutubePlayer-in-WKWebView](https://github.com/hmhv/YoutubePlayer-in-WKWebView) - Is used to display youtube video with cooking instructions
 
 ## Authors
 * **Orkhan Huseynov** - *Initial work* - [orkhan-huseynov](https://github.com/orkhan-huseynov)
