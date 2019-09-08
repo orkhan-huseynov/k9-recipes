@@ -8,7 +8,7 @@ No worries, K9 recipes app got you covered! Just pick ingredients you have and i
 
 ## Features
 
-### Search recipes by ingredients with intellingent autocomplete
+### Search recipes by ingredients with intelligent autocomplete
 <p float="left">
     <img src="https://habrastorage.org/webt/5l/z6/3q/5lz63qyqv1_ups0cuh4uw7jgpju.png" width="250" />
     <img src="https://habrastorage.org/webt/jw/jx/wq/jwjxwqgrbcuihjjlelfwrstgxni.png" width="250" />
