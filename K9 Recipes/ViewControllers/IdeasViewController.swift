@@ -100,8 +100,10 @@ class IdeasViewController: ASViewController<ASDisplayNode> {
                 }
             case let .finishedLoading(result):
                 ActivityIndicatorController.shared.dismiss()
-                self?.tableRefreshControl.endRefreshing()
-                self?.emptyNodeRefreshControl.endRefreshing()
+                DispatchQueue.main.async {
+                    self?.tableRefreshControl.endRefreshing()
+                    self?.emptyNodeRefreshControl.endRefreshing()
+                }
 
                 switch result {
                 case let .success(recipes):

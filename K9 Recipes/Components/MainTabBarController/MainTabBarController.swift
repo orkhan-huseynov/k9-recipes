@@ -30,6 +30,10 @@ class MainTabBarController: ASTabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.baseGreen], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
         
-        viewControllers = tabs.map { ASNavigationController(rootViewController: $0) }
+        viewControllers = tabs.map { vc in
+            let navigationController = ASNavigationController(rootViewController: vc)
+            navigationController.setBackButton()
+            return navigationController
+        }
     }
 }

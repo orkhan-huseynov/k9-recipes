@@ -48,15 +48,8 @@ class SearchViewController: ASViewController<ASScrollNode> {
     
     private lazy var mainIngredient: TextControlNode = {
         let node = TextControlNode()
-        
         node.title = "Main ingredient"
         node.placeholder = "eg: Chicken"
-        node.onChange = { [weak self] text in
-            print(text)
-            self?.validateFields()
-        }
-        node.autocompletionStrings = ["Apple", "Pineapple", "Pear"]
-        
         return node
     }()
     
@@ -82,9 +75,27 @@ class SearchViewController: ASViewController<ASScrollNode> {
         let node = PrimaryButtonNode()
         
         node.title = "Find recipes!"
-        node.isEnabled = false
+        node.isEnabled = true
         node.onTap = { [weak self] in
-            print(self?.mainIngredient.value)
+            guard let mainIngredient = self?.mainIngredient.value else {
+                self?.mainIngredient.view.shake()
+                return
+            }
+            
+            var query = mainIngredient
+            
+            if let secondaryIngredient = self?.secondaryIngredient.value {
+                query += ",\(secondaryIngredient)"
+            }
+            
+            if let additionalIngredient = self?.additionalIngredient.value {
+                query += ",\(additionalIngredient)"
+            }
+            
+            self?.navigationController?.pushViewController(
+                SearchResultsViewController(query: query),
+                animated: true
+            )
         }
         
         return node
@@ -176,6 +187,8 @@ class SearchViewController: ASViewController<ASScrollNode> {
      
         navigationItem.title = "Find recipes"
         (view as? UIScrollView)?.contentInsetAdjustmentBehavior = .never
+        
+        setBackTitle()
     }
     
     func prepare() {
@@ -203,10 +216,6 @@ class SearchViewController: ASViewController<ASScrollNode> {
                 }
             }
         }
-    }
-
-    private func validateFields() {
-        submitButton.isEnabled = mainIngredient.value != nil
     }
     
     @objc private func refreshHandler() {

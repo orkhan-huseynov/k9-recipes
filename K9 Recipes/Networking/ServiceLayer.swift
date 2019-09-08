@@ -10,12 +10,12 @@ import Foundation
 import os.log
 
 class ServiceLayer {
-    class func request<T: Codable>(router: Router, completion: @escaping (Result<[String: [T]], Error>) -> ()) {
+    class func request<T: Codable>(router: Router, params: [URLQueryItem] = [], completion: @escaping (Result<[String: [T]], Error>) -> ()) {
         var components = URLComponents()
         components.scheme = Constants.apiScheme
         components.host = Constants.apiHost
         components.path = router.path
-        components.queryItems = router.parameters
+        components.queryItems = router.parameters + params
         
         guard let url = components.url else { return }
         var urlRequest = URLRequest(url: url)
@@ -47,6 +47,7 @@ class ServiceLayer {
                 }
             } catch {
                 Logger.log(message: "Could not decode response data", type: .error)
+                completion(.failure(NSError(domain: "", code: 404, userInfo: nil)))
             }
         }
         dataTask.resume()

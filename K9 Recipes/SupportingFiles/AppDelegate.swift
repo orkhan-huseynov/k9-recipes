@@ -20,10 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
         
-        UINavigationBar.appearance().titleTextAttributes = [
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.titleTextAttributes = [
             .foregroundColor: UIColor.baseBlack,
-            .font: UIFont.systemFont(ofSize: 14.0)
+            .font: UIFont.systemFont(ofSize: 15.0)
         ]
+        navBarAppearance.tintColor = .baseGreen
         
         IQKeyboardManager.shared.enable = true
         

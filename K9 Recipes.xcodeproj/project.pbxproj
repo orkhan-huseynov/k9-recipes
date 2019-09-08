@@ -29,6 +29,11 @@
 		9D6F344B23251A8E00CB0A67 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F344A23251A8E00CB0A67 /* SearchResultsViewController.swift */; };
 		9D6F344D23251A9B00CB0A67 /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F344C23251A9B00CB0A67 /* SearchResultsViewModel.swift */; };
 		9D6F344F23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F344E23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift */; };
+		9D6F345423251FB300CB0A67 /* SearchResultsTableNodeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F345323251FB300CB0A67 /* SearchResultsTableNodeItem.swift */; };
+		9D6F345623251FE100CB0A67 /* SearchResultsTableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F345523251FE100CB0A67 /* SearchResultsTableNode.swift */; };
+		9D6F34582325202900CB0A67 /* SearchResultsTableNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F34572325202900CB0A67 /* SearchResultsTableNodeCell.swift */; };
+		9D6F345A232521BE00CB0A67 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F3459232521BE00CB0A67 /* UIView+Shake.swift */; };
+		9D6F345C2325281C00CB0A67 /* ASNavigationController+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F345B2325281C00CB0A67 /* ASNavigationController+BackButton.swift */; };
 		9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE32323B92F0008B272 /* MainTabBarController.swift */; };
 		9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */; };
 		9D83EDE82323C8030008B272 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE72323C8030008B272 /* RecipesViewController.swift */; };
@@ -105,6 +110,11 @@
 		9D6F344A23251A8E00CB0A67 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		9D6F344C23251A9B00CB0A67 /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
 		9D6F344E23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewControllerProtocol.swift; sourceTree = "<group>"; };
+		9D6F345323251FB300CB0A67 /* SearchResultsTableNodeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableNodeItem.swift; sourceTree = "<group>"; };
+		9D6F345523251FE100CB0A67 /* SearchResultsTableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableNode.swift; sourceTree = "<group>"; };
+		9D6F34572325202900CB0A67 /* SearchResultsTableNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableNodeCell.swift; sourceTree = "<group>"; };
+		9D6F3459232521BE00CB0A67 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
+		9D6F345B2325281C00CB0A67 /* ASNavigationController+BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASNavigationController+BackButton.swift"; sourceTree = "<group>"; };
 		9D83EDE32323B92F0008B272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		9D83EDE72323C8030008B272 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +289,8 @@
 				9D9DB7F823242FDD0046EF12 /* Array+SafeSubscript.swift */,
 				9D9DB7FC232433C40046EF12 /* UIViewController+Helpers.swift */,
 				9D6E33E92324DAE0008E76D9 /* Layout+Insets.swift */,
+				9D6F3459232521BE00CB0A67 /* UIView+Shake.swift */,
+				9D6F345B2325281C00CB0A67 /* ASNavigationController+BackButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,9 +343,36 @@
 			path = TextControlNode;
 			sourceTree = "<group>";
 		};
+		9D6F345023251F8900CB0A67 /* SearchResultsTableNode */ = {
+			isa = PBXGroup;
+			children = (
+				9D6F345223251FA000CB0A67 /* Model */,
+				9D6F345123251F9B00CB0A67 /* View */,
+			);
+			path = SearchResultsTableNode;
+			sourceTree = "<group>";
+		};
+		9D6F345123251F9B00CB0A67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D6F345523251FE100CB0A67 /* SearchResultsTableNode.swift */,
+				9D6F34572325202900CB0A67 /* SearchResultsTableNodeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D6F345223251FA000CB0A67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D6F345323251FB300CB0A67 /* SearchResultsTableNodeItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9D83EDE12323B1500008B272 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9D6F345023251F8900CB0A67 /* SearchResultsTableNode */,
 				9D6E33EE2324E1BD008E76D9 /* TextControlNode */,
 				9D6E33EB2324DC79008E76D9 /* PrimaryButtonNode */,
 				9D6E33E62324D3BE008E76D9 /* ButtonNode */,
@@ -667,6 +706,7 @@
 				9D9DB800232434DA0046EF12 /* ActivityIndicatorController.swift in Sources */,
 				9D9DB7F923242FDD0046EF12 /* Array+SafeSubscript.swift in Sources */,
 				9D6E33E82324D3CA008E76D9 /* ButtonNode.swift in Sources */,
+				9D6F345C2325281C00CB0A67 /* ASNavigationController+BackButton.swift in Sources */,
 				9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */,
 				9D83EDED2323D7940008B272 /* Router.swift in Sources */,
 				9D9DB7EC232429300046EF12 /* TextNode.swift in Sources */,
@@ -681,6 +721,7 @@
 				9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */,
 				9D83EDF42323DF590008B272 /* ServiceLayer.swift in Sources */,
 				9D6F344B23251A8E00CB0A67 /* SearchResultsViewController.swift in Sources */,
+				9D6F345423251FB300CB0A67 /* SearchResultsTableNodeItem.swift in Sources */,
 				9D6F34492324F87000CB0A67 /* SeachViewControllerProtocol.swift in Sources */,
 				9D9DB7FB232430CE0046EF12 /* IdeasTableNodeCell.swift in Sources */,
 				9D6E33ED2324DC8A008E76D9 /* PrimaryButtonNode.swift in Sources */,
@@ -689,8 +730,11 @@
 				9D9DB7F323242D950046EF12 /* IdeasTableNode.swift in Sources */,
 				9D4C45972323FE13002D2D24 /* Recipe.swift in Sources */,
 				9D6E33E52324D184008E76D9 /* EditableTextNode.swift in Sources */,
+				9D6F345623251FE100CB0A67 /* SearchResultsTableNode.swift in Sources */,
 				9D4C4599232400D4002D2D24 /* Category.swift in Sources */,
 				9D4C459B2324022F002D2D24 /* Area.swift in Sources */,
+				9D6F345A232521BE00CB0A67 /* UIView+Shake.swift in Sources */,
+				9D6F34582325202900CB0A67 /* SearchResultsTableNodeCell.swift in Sources */,
 				9D9DB7F723242DF50046EF12 /* TableNodeBase.swift in Sources */,
 				9D6F34452324E1E700CB0A67 /* TextControlNode.swift in Sources */,
 				9D6E33EA2324DAE0008E76D9 /* Layout+Insets.swift in Sources */,
