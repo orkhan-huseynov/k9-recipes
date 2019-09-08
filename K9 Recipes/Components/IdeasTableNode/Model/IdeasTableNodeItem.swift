@@ -9,6 +9,7 @@
 struct IdeasTableNodeItem {
     
     let title: String?
+    let subtitle: String?
     let category: String?
     let area: String?
     let instructions: String?

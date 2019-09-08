@@ -19,6 +19,11 @@
 		9D4C459B2324022F002D2D24 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C459A2324022F002D2D24 /* Area.swift */; };
 		9D4C459D2324029B002D2D24 /* RecipeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C459C2324029B002D2D24 /* RecipeStep.swift */; };
 		9D4C459F23240327002D2D24 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C459E23240327002D2D24 /* Ingredient.swift */; };
+		9D6E33E52324D184008E76D9 /* EditableTextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E33E42324D184008E76D9 /* EditableTextNode.swift */; };
+		9D6E33E82324D3CA008E76D9 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E33E72324D3CA008E76D9 /* ButtonNode.swift */; };
+		9D6E33EA2324DAE0008E76D9 /* Layout+Insets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E33E92324DAE0008E76D9 /* Layout+Insets.swift */; };
+		9D6E33ED2324DC8A008E76D9 /* PrimaryButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E33EC2324DC8A008E76D9 /* PrimaryButtonNode.swift */; };
+		9D6F34452324E1E700CB0A67 /* TextControlNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F34442324E1E700CB0A67 /* TextControlNode.swift */; };
 		9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE32323B92F0008B272 /* MainTabBarController.swift */; };
 		9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */; };
 		9D83EDE82323C8030008B272 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE72323C8030008B272 /* RecipesViewController.swift */; };
@@ -85,6 +90,11 @@
 		9D4C459A2324022F002D2D24 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		9D4C459C2324029B002D2D24 /* RecipeStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStep.swift; sourceTree = "<group>"; };
 		9D4C459E23240327002D2D24 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		9D6E33E42324D184008E76D9 /* EditableTextNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTextNode.swift; sourceTree = "<group>"; };
+		9D6E33E72324D3CA008E76D9 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		9D6E33E92324DAE0008E76D9 /* Layout+Insets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layout+Insets.swift"; sourceTree = "<group>"; };
+		9D6E33EC2324DC8A008E76D9 /* PrimaryButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonNode.swift; sourceTree = "<group>"; };
+		9D6F34442324E1E700CB0A67 /* TextControlNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextControlNode.swift; sourceTree = "<group>"; };
 		9D83EDE32323B92F0008B272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		9D83EDE72323C8030008B272 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +263,7 @@
 				9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */,
 				9D9DB7F823242FDD0046EF12 /* Array+SafeSubscript.swift */,
 				9D9DB7FC232433C40046EF12 /* UIViewController+Helpers.swift */,
+				9D6E33E92324DAE0008E76D9 /* Layout+Insets.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,9 +292,37 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		9D6E33E62324D3BE008E76D9 /* ButtonNode */ = {
+			isa = PBXGroup;
+			children = (
+				9D6E33E72324D3CA008E76D9 /* ButtonNode.swift */,
+			);
+			path = ButtonNode;
+			sourceTree = "<group>";
+		};
+		9D6E33EB2324DC79008E76D9 /* PrimaryButtonNode */ = {
+			isa = PBXGroup;
+			children = (
+				9D6E33EC2324DC8A008E76D9 /* PrimaryButtonNode.swift */,
+			);
+			path = PrimaryButtonNode;
+			sourceTree = "<group>";
+		};
+		9D6E33EE2324E1BD008E76D9 /* TextControlNode */ = {
+			isa = PBXGroup;
+			children = (
+				9D6F34442324E1E700CB0A67 /* TextControlNode.swift */,
+			);
+			path = TextControlNode;
+			sourceTree = "<group>";
+		};
 		9D83EDE12323B1500008B272 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9D6E33EE2324E1BD008E76D9 /* TextControlNode */,
+				9D6E33EB2324DC79008E76D9 /* PrimaryButtonNode */,
+				9D6E33E62324D3BE008E76D9 /* ButtonNode */,
+				9D9DB8052324D1300046EF12 /* EditableTextNode */,
 				9D9DB7F423242DD50046EF12 /* TableNodeBase */,
 				9D9DB7ED23242CBD0046EF12 /* IdeasTableNode */,
 				9D9DB7EA232429250046EF12 /* TextNode */,
@@ -375,6 +414,14 @@
 				9D9DB801232435780046EF12 /* AlertController.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9D9DB8052324D1300046EF12 /* EditableTextNode */ = {
+			isa = PBXGroup;
+			children = (
+				9D6E33E42324D184008E76D9 /* EditableTextNode.swift */,
+			);
+			path = EditableTextNode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -603,6 +650,7 @@
 				9D4C459F23240327002D2D24 /* Ingredient.swift in Sources */,
 				9D9DB800232434DA0046EF12 /* ActivityIndicatorController.swift in Sources */,
 				9D9DB7F923242FDD0046EF12 /* Array+SafeSubscript.swift in Sources */,
+				9D6E33E82324D3CA008E76D9 /* ButtonNode.swift in Sources */,
 				9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */,
 				9D83EDED2323D7940008B272 /* Router.swift in Sources */,
 				9D9DB7EC232429300046EF12 /* TextNode.swift in Sources */,
@@ -615,13 +663,17 @@
 				9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */,
 				9D83EDF42323DF590008B272 /* ServiceLayer.swift in Sources */,
 				9D9DB7FB232430CE0046EF12 /* IdeasTableNodeCell.swift in Sources */,
+				9D6E33ED2324DC8A008E76D9 /* PrimaryButtonNode.swift in Sources */,
 				9D83EDF22323DB5A0008B272 /* Constants.swift in Sources */,
 				9D9DB802232435780046EF12 /* AlertController.swift in Sources */,
 				9D9DB7F323242D950046EF12 /* IdeasTableNode.swift in Sources */,
 				9D4C45972323FE13002D2D24 /* Recipe.swift in Sources */,
+				9D6E33E52324D184008E76D9 /* EditableTextNode.swift in Sources */,
 				9D4C4599232400D4002D2D24 /* Category.swift in Sources */,
 				9D4C459B2324022F002D2D24 /* Area.swift in Sources */,
 				9D9DB7F723242DF50046EF12 /* TableNodeBase.swift in Sources */,
+				9D6F34452324E1E700CB0A67 /* TextControlNode.swift in Sources */,
+				9D6E33EA2324DAE0008E76D9 /* Layout+Insets.swift in Sources */,
 				9D9DB7F123242CE30046EF12 /* IdeasTableNodeItem.swift in Sources */,
 				9D9DB7E9232427260046EF12 /* SectionEmptyNode.swift in Sources */,
 			);

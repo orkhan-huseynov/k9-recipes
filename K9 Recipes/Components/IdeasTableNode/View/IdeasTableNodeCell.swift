@@ -35,7 +35,7 @@ class IdeasTableNodeCell: ASCellNode {
     }()
     
     private lazy var subtitleNode: TextNode = {
-        let node = TextNode(text: item?.category)
+        let node = TextNode(text: item?.subtitle)
         node.font = .boldSystemFont(ofSize: 14)
         node.color = .white
         node.maximumNumberOfLines = 1

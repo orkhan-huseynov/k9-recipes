@@ -118,6 +118,7 @@ class IdeasViewController: ASViewController<ASDisplayNode> {
         tableNode.data = rows.map { row in
             IdeasTableNodeItem(
                 title: row.title,
+                subtitle: String(row.ingredients.prefix(3).reduce("") { "\($0), \($1)" }.dropFirst(2)),
                 category: row.category,
                 area: row.area,
                 instructions: row.instructions,

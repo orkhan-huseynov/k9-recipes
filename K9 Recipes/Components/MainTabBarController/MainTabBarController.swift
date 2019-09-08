@@ -12,7 +12,7 @@ class MainTabBarController: ASTabBarController {
     
     private lazy var tabs: [UIViewController] = {
         let searchVC = SearchViewController()
-        searchVC.tabBarItem = UITabBarItem(title: "Find recipe", image: #imageLiteral(resourceName: "search"), tag: 0)
+        searchVC.tabBarItem = UITabBarItem(title: "Find recipes", image: #imageLiteral(resourceName: "search"), tag: 0)
         
         let ideasVC = IdeasViewController()
         ideasVC.tabBarItem = UITabBarItem(title: "Latest ideas", image: #imageLiteral(resourceName: "bulb"), tag: 1)
