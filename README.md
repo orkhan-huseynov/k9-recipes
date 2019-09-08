@@ -6,6 +6,13 @@ No worries, K9 recipes app got you covered! Just pick ingredients you have and i
 
 *The name K9 was inspired from a fictional mechanical dog character appeared in Doctor Who sci-fi series. Our app is smart and helpful in the kitchen like original K9 was - intelligent, helpful and always loyal to Fourth Doctor*
 
+## Features
+
+### Search recipes by ingredients
+### Browse for latest awesome recipe ideas
+### View recipes by categories
+### Read instructions, view required ingredients or just watch a video on how to cook!
+
 
 ## Getting Started
     
@@ -25,12 +32,6 @@ git clone https://github.com/orkhan-huseynov/k9-recipes.git
 * Open K9 Recipes.xcworkspace in Xcode
 
 * Build and run the project
-
-## Running the tests
-
-Assuming project is open in Xcode, select Product -> Test, or press CMD+U
-
-The project contains some basic Unit and UI tests
 
 ## Built With
 
