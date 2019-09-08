@@ -6,6 +6,7 @@ target 'K9 Recipes' do
 
   # Pods for K9 Recipes
   pod "Texture"
+  pod 'IQKeyboardManagerSwift'
 
   target 'K9 RecipesTests' do
     inherit! :search_paths

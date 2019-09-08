@@ -31,6 +31,9 @@ class SearchViewController: ASViewController<ASScrollNode> {
         
         node.title = "Main ingredient"
         node.placeholder = "eg: Chicken"
+        node.onChange = { [weak self] _ in
+            self?.validateFields()
+        }
         
         return node
     }()
@@ -126,6 +129,9 @@ class SearchViewController: ASViewController<ASScrollNode> {
         (view as? UIScrollView)?.contentInsetAdjustmentBehavior = .never
     }
 
-
+    private func validateFields() {
+        submitButton.isEnabled = mainIngredient.value != nil
+    }
+    
 }
 

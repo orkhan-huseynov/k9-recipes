@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .foregroundColor: UIColor.baseBlack,
             .font: UIFont.systemFont(ofSize: 14.0)
         ]
+        
+        IQKeyboardManager.shared.enable = true
         
         return true
     }

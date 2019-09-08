@@ -37,6 +37,15 @@ class TextControlNode: ASControlNode {
         }
     }
     
+    var onChange: ((String?) -> Void)? {
+        get {
+            return textControl.onChange
+        }
+        set(val) {
+            textControl.onChange = val
+        }
+    }
+    
     private lazy var label: TextNode = {
         let node = TextNode()
         node.color = .baseBlack
