@@ -9,17 +9,25 @@ No worries, K9 recipes app got you covered! Just pick ingredients you have and i
 ## Features
 
 ### Search recipes by ingredients with intellingent autocomplete
-<img src="https://habrastorage.org/webt/5l/z6/3q/5lz63qyqv1_ups0cuh4uw7jgpju.png" width="400" />
-<img src="https://habrastorage.org/webt/5l/z6/3q/5lz63qyqv1_ups0cuh4uw7jgpju.png" width="400" />
-<img src="https://habrastorage.org/webt/jw/jx/wq/jwjxwqgrbcuihjjlelfwrstgxni.png" width="400" />
+<p float="left">
+    <img src="https://habrastorage.org/webt/5l/z6/3q/5lz63qyqv1_ups0cuh4uw7jgpju.png" width="400" />
+    <img src="https://habrastorage.org/webt/5l/z6/3q/5lz63qyqv1_ups0cuh4uw7jgpju.png" width="400" />
+    <img src="https://habrastorage.org/webt/jw/jx/wq/jwjxwqgrbcuihjjlelfwrstgxni.png" width="400" />
+</p>
 ### Browse for latest awesome recipe ideas
-<img src="https://habrastorage.org/webt/3l/gz/de/3lgzdefwgvjgak0hhcdpwhu7moo.png" width="400" />
+<p float="left">
+    <img src="https://habrastorage.org/webt/3l/gz/de/3lgzdefwgvjgak0hhcdpwhu7moo.png" width="400" />
+</p>
 ### View recipes by categories
-<img src="https://habrastorage.org/webt/oq/5x/kd/oq5xkdmtwwapmmpubwgvq18_kpm.png" width="400" />
+<p float="left">
+    <img src="https://habrastorage.org/webt/oq/5x/kd/oq5xkdmtwwapmmpubwgvq18_kpm.png" width="400" />
+</p>
 ### Read instructions, view required ingredients or just watch a video on how to cook" width="400" />
-<img src="https://habrastorage.org/webt/vm/es/ko/vmeskobolte_nmo6iennug6cc3w.png" width="400" />
-<img src="https://habrastorage.org/webt/5y/vc/0s/5yvc0sfugmj1mdbvrdveur3sfs4.png" width="400" />
-<img src="https://habrastorage.org/webt/ov/ml/gm/ovmlgmic2anu6xkv3ho_-khphwe.png" width="400" />
+<p float="left">
+    <img src="https://habrastorage.org/webt/vm/es/ko/vmeskobolte_nmo6iennug6cc3w.png" width="400" />
+    <img src="https://habrastorage.org/webt/5y/vc/0s/5yvc0sfugmj1mdbvrdveur3sfs4.png" width="400" />
+    <img src="https://habrastorage.org/webt/ov/ml/gm/ovmlgmic2anu6xkv3ho_-khphwe.png" width="400" />
+</p>
 
 
 ## Getting Started
