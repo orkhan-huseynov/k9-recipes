@@ -13,6 +13,7 @@ enum Router {
     case getIngredients
     case getFilteredByIngredients
     case getRecipeDetails
+    case getCategories
     
     var path: String {
         let prefix = "\(Constants.apiPathPrefix)/\(Constants.apiKey)"
@@ -26,12 +27,17 @@ enum Router {
             return "\(prefix)/filter.php"
         case .getRecipeDetails:
             return "\(prefix)/lookup.php"
+        case .getCategories:
+            return "\(prefix)/categories.php"
         }
     }
     
     var parameters: [URLQueryItem] {
         switch self {
-        case .getLatestRecipes, .getFilteredByIngredients, .getRecipeDetails:
+        case .getLatestRecipes,
+             .getFilteredByIngredients,
+             .getRecipeDetails,
+             .getCategories:
             return []
         case .getIngredients:
             return [
@@ -42,7 +48,11 @@ enum Router {
     
     var method: String {
         switch self {
-        case .getLatestRecipes, .getIngredients, .getFilteredByIngredients, .getRecipeDetails:
+        case .getLatestRecipes,
+             .getIngredients,
+             .getFilteredByIngredients,
+             .getRecipeDetails,
+             .getCategories:
             return "GET"
         }
     }

@@ -32,7 +32,7 @@ class RecipeDetailsViewModel: RecipeDetailsViewControllerProtocol {
         
         let param = URLQueryItem(name: "i", value: "\(recipeId)")
         
-        ServiceLayer.request(router: Router.getRecipeDetails, params: [param]) { [weak self] (result: Result<[String: [Recipe]], Error>) in
+        ServiceLayer.request(router: .getRecipeDetails, params: [param]) { [weak self] (result: Result<[String: [Recipe]], Error>) in
             switch result {
             case let .success(res):
                 let recipes = res["meals"] ?? []

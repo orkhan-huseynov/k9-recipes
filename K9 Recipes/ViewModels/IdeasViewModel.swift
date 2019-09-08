@@ -29,7 +29,7 @@ class IdeasViewModel: IdeasViewControllerProtocol {
         lock.lock(); defer { lock.unlock() }
         changeClosure?(.startedLoading)
         
-        ServiceLayer.request(router: Router.getLatestRecipes) { [weak self] (result: Result<[String: [Recipe]], Error>) in
+        ServiceLayer.request(router: .getLatestRecipes) { [weak self] (result: Result<[String: [Recipe]], Error>) in
             switch result {
             case let .success(res):
                 let recipes = res["meals"] ?? []

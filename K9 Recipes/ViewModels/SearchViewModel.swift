@@ -29,7 +29,7 @@ class SearchViewModel: SearchViewControllerProtocol {
         lock.lock(); defer { lock.unlock() }
         changeClosure?(.startedLoadingIngredients)
         
-        ServiceLayer.request(router: Router.getIngredients) { [weak self] (result: Result<[String: [Ingredient]], Error>) in
+        ServiceLayer.request(router: .getIngredients) { [weak self] (result: Result<[String: [Ingredient]], Error>) in
             switch result {
             case let .success(res):
                 let ingredients = res["meals"] ?? []

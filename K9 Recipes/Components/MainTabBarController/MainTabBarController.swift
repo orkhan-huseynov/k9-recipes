@@ -17,10 +17,10 @@ class MainTabBarController: ASTabBarController {
         let ideasVC = IdeasViewController()
         ideasVC.tabBarItem = UITabBarItem(title: "Latest ideas", image: #imageLiteral(resourceName: "bulb"), tag: 1)
         
-        let recipesVC = RecipesViewController()
-        recipesVC.tabBarItem = UITabBarItem(title: "By categories", image: #imageLiteral(resourceName: "book"), tag: 2)
+        let categoriesVC = CategoriesViewController()
+        categoriesVC.tabBarItem = UITabBarItem(title: "By categories", image: #imageLiteral(resourceName: "book"), tag: 2)
         
-        return [searchVC, ideasVC, recipesVC]
+        return [searchVC, ideasVC, categoriesVC]
     }()
     
     override func viewDidLoad() {
