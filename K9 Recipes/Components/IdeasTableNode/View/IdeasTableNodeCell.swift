@@ -47,7 +47,7 @@ class IdeasTableNodeCell: ASCellNode {
         node.font = .systemFont(ofSize: 14)
         node.color = .white
         node.maximumNumberOfLines = 1
-        node.backgroundColor = .baseGreen
+        node.backgroundColor = (item?.area?.isEmpty ?? true) ? .clear : .baseGreen
         node.cornerRadius = 10.0
         node.clipsToBounds = true
         node.textContainerInset = UIEdgeInsets(top: 3.0, left: 10.0, bottom: 3.0, right: 10.0)

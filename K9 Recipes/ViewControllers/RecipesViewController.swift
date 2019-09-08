@@ -1,16 +1,17 @@
 //
-//  CategoriesViewController.swift
+//  RecipesViewController.swift
 //  K9 Recipes
 //
-//  Created by Orkhan Huseynov on 9/7/19.
+//  Created by Orkhan Huseynov on 9/8/19.
 //  Copyright © 2019 Orkhan Huseynov. All rights reserved.
 //
 
 import AsyncDisplayKit
 
-class CategoriesViewController: ASViewController<ASDisplayNode> {
+class RecipesViewController: ASViewController<ASDisplayNode> {
     
-    var viewModel: CategoriesViewControllerProtocol = CategoriesViewModel()
+    var category: Category?
+    var viewModel: RecipesViewControllerProtocol = RecipesViewModel()
     
     var isEmpty: Bool = false {
         didSet(val) {
@@ -23,12 +24,12 @@ class CategoriesViewController: ASViewController<ASDisplayNode> {
     
     private lazy var emptyNode: SectionEmptyNode = {
         let node = SectionEmptyNode()
-        node.title = "Sorry!\nNothing found for your request."
+        node.title = "Sorry!\nNo recipes found in selected category."
         return node
     }()
     
-    private lazy var tableNode: CategoriesTableNode = {
-        let tableNode = CategoriesTableNode()
+    private lazy var tableNode: IdeasTableNode = {
+        let tableNode = IdeasTableNode()
         
         tableNode.style.flexGrow = 1
         tableNode.backgroundColor = .white
@@ -48,8 +49,10 @@ class CategoriesViewController: ASViewController<ASDisplayNode> {
         return control
     }()
     
-    init() {
+    init(category: Category) {
         super.init(node: ASDisplayNode())
+        
+        self.category = category
         
         node.backgroundColor = .white
         node.automaticallyManagesSubnodes = true
@@ -80,7 +83,7 @@ class CategoriesViewController: ASViewController<ASDisplayNode> {
         super.viewDidLoad()
         
         prepare()
-        viewModel.loadList()
+        viewModel.loadList(category: category)
         
         tableNode.view.refreshControl = tableRefreshControl
         
@@ -90,7 +93,7 @@ class CategoriesViewController: ASViewController<ASDisplayNode> {
         
         setBackTitle()
         
-        navigationItem.title = "Meal Categories"
+        navigationItem.title = "\(category?.name ?? "") recipes"
     }
     
     func prepare() {
@@ -108,9 +111,9 @@ class CategoriesViewController: ASViewController<ASDisplayNode> {
                 }
                 
                 switch result {
-                case let .success(categories):
-                    self?.isEmpty = categories.isEmpty
-                    self?.initRows(rows: categories)
+                case let .success(recipes):
+                    self?.isEmpty = recipes.isEmpty
+                    self?.initRows(rows: recipes)
                 case .failure:
                     AlertController.shared.message(title: "Error", message: "Sorry! Could not load the list")
                 }
@@ -118,13 +121,17 @@ class CategoriesViewController: ASViewController<ASDisplayNode> {
         }
     }
     
-    func initRows(rows: [Category]) {
+    func initRows(rows: [Recipe]) {
         tableNode.data = rows.map { row in
-            CategoriesTableNodeItem(
-                title: row.name,
+            IdeasTableNodeItem(
+                title: row.title,
+                subtitle: String(row.ingredients.prefix(3).reduce("") { "\($0), \($1)" }.dropFirst(2)),
+                category: row.category,
+                area: row.area,
+                instructions: row.instructions,
                 image: row.image,
                 onSelect: { [weak self] in
-                    let vc = RecipesViewController(category: row)
+                    let vc = RecipeDetailsViewController(recipe: row)
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             )
@@ -133,7 +140,7 @@ class CategoriesViewController: ASViewController<ASDisplayNode> {
     }
     
     @objc private func refreshHandler() {
-        viewModel.loadList()
+        viewModel.loadList(category: category)
     }
 }
 

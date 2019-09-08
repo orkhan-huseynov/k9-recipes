@@ -45,6 +45,9 @@
 		9D6F3473232564C300CB0A67 /* CategoriesTableNodeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F3472232564C300CB0A67 /* CategoriesTableNodeItem.swift */; };
 		9D6F3475232564F000CB0A67 /* CategoriesTableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F3474232564F000CB0A67 /* CategoriesTableNode.swift */; };
 		9D6F34772325653700CB0A67 /* CategoriesTableNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F34762325653700CB0A67 /* CategoriesTableNodeCell.swift */; };
+		9D6F3479232568AC00CB0A67 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F3478232568AC00CB0A67 /* RecipesViewController.swift */; };
+		9D6F347B232568B900CB0A67 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F347A232568B900CB0A67 /* RecipesViewModel.swift */; };
+		9D6F347D232568D000CB0A67 /* RecipesViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F347C232568D000CB0A67 /* RecipesViewControllerProtocol.swift */; };
 		9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE32323B92F0008B272 /* MainTabBarController.swift */; };
 		9D83EDE62323C1B70008B272 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */; };
 		9D83EDE82323C8030008B272 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83EDE72323C8030008B272 /* CategoriesViewController.swift */; };
@@ -137,6 +140,9 @@
 		9D6F3472232564C300CB0A67 /* CategoriesTableNodeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableNodeItem.swift; sourceTree = "<group>"; };
 		9D6F3474232564F000CB0A67 /* CategoriesTableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableNode.swift; sourceTree = "<group>"; };
 		9D6F34762325653700CB0A67 /* CategoriesTableNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableNodeCell.swift; sourceTree = "<group>"; };
+		9D6F3478232568AC00CB0A67 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		9D6F347A232568B900CB0A67 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
+		9D6F347C232568D000CB0A67 /* RecipesViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewControllerProtocol.swift; sourceTree = "<group>"; };
 		9D83EDE32323B92F0008B272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9D83EDE52323C1B70008B272 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		9D83EDE72323C8030008B272 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +287,7 @@
 				9D83EDE92323CFFD0008B272 /* IdeasViewController.swift */,
 				9D6F344A23251A8E00CB0A67 /* SearchResultsViewController.swift */,
 				9D6F345D23252F2400CB0A67 /* RecipeDetailsViewController.swift */,
+				9D6F3478232568AC00CB0A67 /* RecipesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -293,6 +300,7 @@
 				9D6F344C23251A9B00CB0A67 /* SearchResultsViewModel.swift */,
 				9D6F345F23252F3100CB0A67 /* RecipeDetailsViewModel.swift */,
 				9D6F346B232562DE00CB0A67 /* CategoriesViewModel.swift */,
+				9D6F347A232568B900CB0A67 /* RecipesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -305,6 +313,7 @@
 				9D6F344E23251AAD00CB0A67 /* SearchResultsViewControllerProtocol.swift */,
 				9D6F346123252F4000CB0A67 /* RecipeDetailsViewControllerProtocol.swift */,
 				9D6F346D232562EC00CB0A67 /* CategoriesViewControllerProtocol.swift */,
+				9D6F347C232568D000CB0A67 /* RecipesViewControllerProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -789,6 +798,7 @@
 				9D83EDED2323D7940008B272 /* Router.swift in Sources */,
 				9D6F345E23252F2400CB0A67 /* RecipeDetailsViewController.swift in Sources */,
 				9D9DB7EC232429300046EF12 /* TextNode.swift in Sources */,
+				9D6F347D232568D000CB0A67 /* RecipesViewControllerProtocol.swift in Sources */,
 				9D6F344D23251A9B00CB0A67 /* SearchResultsViewModel.swift in Sources */,
 				9D2B864F232396EB00A0815A /* AppDelegate.swift in Sources */,
 				9D4C45942323FA07002D2D24 /* Logger.swift in Sources */,
@@ -799,6 +809,7 @@
 				9D9DB7FD232433C40046EF12 /* UIViewController+Helpers.swift in Sources */,
 				9D83EDE42323B92F0008B272 /* MainTabBarController.swift in Sources */,
 				9D83EDF42323DF590008B272 /* ServiceLayer.swift in Sources */,
+				9D6F3479232568AC00CB0A67 /* RecipesViewController.swift in Sources */,
 				9D6F344B23251A8E00CB0A67 /* SearchResultsViewController.swift in Sources */,
 				9D6F346223252F4000CB0A67 /* RecipeDetailsViewControllerProtocol.swift in Sources */,
 				9D6F345423251FB300CB0A67 /* SearchResultsTableNodeItem.swift in Sources */,
@@ -817,6 +828,7 @@
 				9D4C459B2324022F002D2D24 /* Area.swift in Sources */,
 				9D6F345A232521BE00CB0A67 /* UIView+Shake.swift in Sources */,
 				9D6F34582325202900CB0A67 /* SearchResultsTableNodeCell.swift in Sources */,
+				9D6F347B232568B900CB0A67 /* RecipesViewModel.swift in Sources */,
 				9D6F34642325435A00CB0A67 /* ASDisplayNode+Separator.swift in Sources */,
 				9D9DB7F723242DF50046EF12 /* TableNodeBase.swift in Sources */,
 				9D6F346A23255B7800CB0A67 /* YoutubeVideoNode.swift in Sources */,
